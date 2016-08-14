@@ -38,30 +38,30 @@ namespace PokemonGo.RocketAPI.Console {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("99")]
-        public float TransferPokemonKeepAboveIVPercentage {
+        public float TransferPokemonKeepAllAboveIVValue {
             get {
-                return ((float)(this["TransferPokemonKeepAboveIVPercentage"]));
+                return ((float)(this["TransferPokemonKeepAllAboveIVValue"]));
             }
             set {
-                this["TransferPokemonKeepAboveIVPercentage"] = value;
+                this["TransferPokemonKeepAllAboveIVValue"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2000")]
-        public int TransferPokemonKeepAboveCP {
+        [global::System.Configuration.DefaultSettingValueAttribute("2500")]
+        public int TransferPokemonKeepAllAboveCPValue {
             get {
-                return ((int)(this["TransferPokemonKeepAboveCP"]));
+                return ((int)(this["TransferPokemonKeepAllAboveCPValue"]));
             }
             set {
-                this["TransferPokemonKeepAboveCP"] = value;
+                this["TransferPokemonKeepAllAboveCPValue"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("150")]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
         public double WalkingSpeedInKilometerPerHour {
             get {
                 return ((double)(this["WalkingSpeedInKilometerPerHour"]));
@@ -157,7 +157,7 @@ namespace PokemonGo.RocketAPI.Console {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1000")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1500")]
         public int MaxTravelDistanceInMeters {
             get {
                 return ((int)(this["MaxTravelDistanceInMeters"]));
@@ -181,7 +181,7 @@ namespace PokemonGo.RocketAPI.Console {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("GPXFILE.gpx")]
+        [global::System.Configuration.DefaultSettingValueAttribute("GPXFile.gpx")]
         public string GPXFile {
             get {
                 return ((string)(this["GPXFile"]));
@@ -265,37 +265,25 @@ namespace PokemonGo.RocketAPI.Console {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1")]
-        public int TransferPokemonKeepDuplicateAmount {
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool UseTransferPokemonKeepAllAboveCP {
             get {
-                return ((int)(this["TransferPokemonKeepDuplicateAmount"]));
+                return ((bool)(this["UseTransferPokemonKeepAllAboveCP"]));
             }
             set {
-                this["TransferPokemonKeepDuplicateAmount"] = value;
+                this["UseTransferPokemonKeepAllAboveCP"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool UseTransferPokemonKeepAboveCP {
+        public bool UseTransferPokemonKeepAllAboveIV {
             get {
-                return ((bool)(this["UseTransferPokemonKeepAboveCP"]));
+                return ((bool)(this["UseTransferPokemonKeepAllAboveIV"]));
             }
             set {
-                this["UseTransferPokemonKeepAboveCP"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool UseTransferPokemonKeepAboveIV {
-            get {
-                return ((bool)(this["UseTransferPokemonKeepAboveIV"]));
-            }
-            set {
-                this["UseTransferPokemonKeepAboveIV"] = value;
+                this["UseTransferPokemonKeepAllAboveIV"] = value;
             }
         }
         
@@ -308,18 +296,6 @@ namespace PokemonGo.RocketAPI.Console {
             }
             set {
                 this["UsePokemonToNotTransferList"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool UseIncense {
-            get {
-                return ((bool)(this["UseIncense"]));
-            }
-            set {
-                this["UseIncense"] = value;
             }
         }
         
@@ -397,13 +373,121 @@ namespace PokemonGo.RocketAPI.Console {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool UseTeleportInsteadOfWalking {
             get {
                 return ((bool)(this["UseTeleportInsteadOfWalking"]));
             }
             set {
                 this["UseTeleportInsteadOfWalking"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool UsePokemonToEvolveList {
+            get {
+                return ((bool)(this["UsePokemonToEvolveList"]));
+            }
+            set {
+                this["UsePokemonToEvolveList"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool CatchIncensePokemon {
+            get {
+                return ((bool)(this["CatchIncensePokemon"]));
+            }
+            set {
+                this["CatchIncensePokemon"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int TransferPokemonKeepAmountHighestCP {
+            get {
+                return ((int)(this["TransferPokemonKeepAmountHighestCP"]));
+            }
+            set {
+                this["TransferPokemonKeepAmountHighestCP"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int TransferPokemonKeepAmountHighestIV {
+            get {
+                return ((int)(this["TransferPokemonKeepAmountHighestIV"]));
+            }
+            set {
+                this["TransferPokemonKeepAmountHighestIV"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool CatchLuredPokemon {
+            get {
+                return ((bool)(this["CatchLuredPokemon"]));
+            }
+            set {
+                this["CatchLuredPokemon"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("15")]
+        public int ExportPokemonToCsvEveryMinutes {
+            get {
+                return ((int)(this["ExportPokemonToCsvEveryMinutes"]));
+            }
+            set {
+                this["ExportPokemonToCsvEveryMinutes"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool HatchEggs {
+            get {
+                return ((bool)(this["HatchEggs"]));
+            }
+            set {
+                this["HatchEggs"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool UseOnlyBasicIncubator {
+            get {
+                return ((bool)(this["UseOnlyBasicIncubator"]));
+            }
+            set {
+                this["UseOnlyBasicIncubator"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("random")]
+        public string DevicePackageName {
+            get {
+                return ((string)(this["DevicePackageName"]));
+            }
+            set {
+                this["DevicePackageName"] = value;
             }
         }
     }

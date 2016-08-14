@@ -71,6 +71,8 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>UserSettings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Xml\XmlSerialize.cs" />
+    <Compile Include="Xml\XmlSettings.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -83,6 +85,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\POGOProtos\POGOProtos\POGOProtos.csproj">
+      <Project>{A03A7BB2-4F0B-467B-84B2-9A76E6AAE6FB}</Project>
+      <Name>POGOProtos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PokemonGo.RocketAPI.Logic\PokemonGo.RocketAPI.Logic.csproj">
       <Project>{0739E40D-C589-4AEB-93E5-EE8CD6773C60}</Project>
       <Name>PokemonGo.RocketAPI.Logic</Name>

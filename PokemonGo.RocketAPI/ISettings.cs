@@ -2,7 +2,8 @@
 
 using PokemonGo.RocketAPI.Enums;
 using System.Collections.Generic;
-using PokemonGo.RocketAPI.GeneratedCode;
+using POGOProtos.Enums;
+using POGOProtos.Inventory.Item;
 
 #endregion
 
@@ -28,28 +29,33 @@ namespace PokemonGo.RocketAPI
 
         bool UsePokemonToNotCatchList { get; }
         bool UsePokemonToNotTransferList { get; }
-
+        bool UsePokemonToEvolveList { get; }
         bool CatchPokemon { get; }
-
+        bool CatchIncensePokemon { get; }
+        bool CatchLuredPokemon { get; }
         bool EvolvePokemon { get; }
         bool EvolveOnlyPokemonAboveIV { get; }
         float EvolveOnlyPokemonAboveIVValue { get; }
         int EvolveKeepCandiesValue { get; }
 
         bool TransferPokemon { get; }
-        int TransferPokemonKeepDuplicateAmount { get; }
         bool NotTransferPokemonsThatCanEvolve { get; }
-        bool UseTransferPokemonKeepAboveCP { get; }
-        int TransferPokemonKeepAboveCP { get; }
-        bool UseTransferPokemonKeepAboveIV { get; }
-        float TransferPokemonKeepAboveIVPercentage { get; }
+        bool UseTransferPokemonKeepAllAboveCP { get; }
+        int TransferPokemonKeepAllAboveCPValue { get; }
+        bool UseTransferPokemonKeepAllAboveIV { get; }
+        float TransferPokemonKeepAllAboveIVValue { get; }
+        int TransferPokemonKeepAmountHighestCP { get; }
+        int TransferPokemonKeepAmountHighestIV { get; }
 
-        bool PrioritizeIVOverCP { get; }
+        bool HatchEggs { get; }
+        bool UseOnlyBasicIncubator { get; }
         bool UseLuckyEggs { get; }
-        bool UseIncense { get; }
+        bool PrioritizeIVOverCP { get; }
+        int ExportPokemonToCsvEveryMinutes { get; }
         bool DebugMode { get; }
+        string DevicePackageName { get; }
 
-        ICollection<KeyValuePair<ItemId, int>> ItemRecycleFilter { get; }
+        ICollection<KeyValuePair<ItemId, int>> ItemRecycleFilter(IEnumerable<ItemData> myItems);
         ICollection<PokemonId> PokemonsToEvolve { get; }
         ICollection<PokemonId> PokemonsToNotTransfer { get; }
         ICollection<PokemonId> PokemonsToNotCatch { get; }

@@ -1,7 +1,8 @@
 ﻿#region
 
 using System;
-using PokemonGo.RocketAPI.GeneratedCode;
+using POGOProtos.Data;
+using POGOProtos.Enums;
 
 #endregion
 

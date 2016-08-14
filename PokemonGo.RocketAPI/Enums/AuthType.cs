@@ -1,9 +1,4 @@
-﻿#region
-
-#endregion
-
-
-namespace PokemonGo.RocketAPI.Enums
+﻿namespace PokemonGo.RocketAPI.Enums
 {
     public enum AuthType
     {

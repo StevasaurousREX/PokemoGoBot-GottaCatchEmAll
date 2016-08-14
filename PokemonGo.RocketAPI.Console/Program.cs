@@ -1,13 +1,17 @@
 ﻿#region
 
 using System;
+using System.Globalization;
+using System.IO;
 using System.Net;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Threading.Tasks;
+using PokemonGo.RocketAPI.Console.Xml;
 using PokemonGo.RocketAPI.Exceptions;
-using PokemonGo.RocketAPI.Logging;
+using PokemonGo.RocketAPI.Logic.Logging;
+using POGOProtos.Settings;
 
 #endregion
 
@@ -18,6 +22,11 @@ namespace PokemonGo.RocketAPI.Console
     {
         private static void Main()
         {
+            var culture = CultureInfo.CreateSpecificCulture("en-US");
+
+            CultureInfo.DefaultThreadCurrentCulture = culture;
+            Thread.CurrentThread.CurrentCulture = culture;
+
             AppDomain.CurrentDomain.UnhandledException
                 += delegate (object sender, UnhandledExceptionEventArgs eargs)
                 {
@@ -28,6 +37,18 @@ namespace PokemonGo.RocketAPI.Console
 
             ServicePointManager.ServerCertificateValidationCallback = Validator;
             Logger.SetLogger();
+
+            if (File.Exists(XmlSettings._configsFile))
+            {
+                // Load the settings from the config file
+                // If the current program is not the latest version, ensure we skip saving the file after loading
+                // This is to prevent saving the file with new options at their default values so we can check for differences
+                XmlSettings.LoadSettings();
+            }
+            else
+            {
+                XmlSettings.CreateSettings(new Settings());
+            }
 
             Task.Run(() =>
             {

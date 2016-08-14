@@ -1,78 +1,69 @@
 <!-- define warning icon -->
-[1.1]: http://i.imgur.com/M4fJ65n.png (ATTENTION)
-[1.2]: http://i.imgur.com/NNcGs1n.png (BTC)
-[1.3]: http://i.epvpimg.com/ZTsdb.png (SCREENSHOT)
+[1.0]: http://i.epvpimg.com/Zgehf.jpg (LOGO)
+[1.1]: http://i.epvpimg.com/puj4b.png (SCREENSHOT)
+[1.2]: http://i.epvpimg.com/RN2Ue.png (STATISTICSCREENSHOT)
+<!-- logo -->
+<p align="center"><img alt="Logo" src="http://i.epvpimg.com/Zgehf.jpg" width="496"></p>
 <!-- title -->
-<h1>A Pokemon Go Bot based on FeroxRevs API</h1>
+<h1>Pokemo GO Bot - Gotta Catch 'Em All Edition</h1>
 <!-- disclaimer -->
-![alt text][1.1]<strong><em> The contents of this repo are a proof of concept and are for educational use only </em></strong>![alt text][1.1]<br />
-<br />
 Chatting about this Repository can be done on our Discord: https://discord.gg/KzJUjDE <br/>
 <br/>
-<strong><em>UPDATE (8/4/2016)</em></strong> - Any program utilizing PoGO's API will not function. <strong>Read more [here](https://www.reddit.com/r/pokemongodev/comments/4w1cvr/pokemongo_current_api_status/)</strong><br />
+<strong><em>UPDATE (8/7/2016)</em></strong> - Back online!<br />
 <br />
-<h2><a name="features">Features</a></h2>
- 
- - [PTC Login / Google]
- - [Humanlike Walking]<br />
- - [Configurable Custom Pathing]<br />
-   (Speed in km/h is configurable via UserSettings)
- - [Farm Pokestops]<br />
-   (use always the nearest from the current location)<br />
-   (Optional: keep within specific MaxTravelDistanceInMeters to Start Point) (MaxTravelDistanceInMeters configurable via UserSettings)
- - [Farm all Pokemon near your]<br />
-   (Optional: PokemonsNotToCatch List. Disabled by default, can be Enabled via UserSettings, configurable Names via File in Config Folder)
- - [Evolve Pokemon]<br />
-   (Optional: Enabled by default, can be Disabled via UserSettings)<br />
-   (Optional: PokemonsToEvolve List - Only Pokemons in this List will be Evolved, configurable via File in Config Folder)<br />
-   (Optional: EvolveOnlyPokemonAboveIV - Will Evolve only Pokemon with IV > EvolveAboveIVValue, Disabled by default, can be Enabled vis UserSettings)
- - [Transfer Pokemon]<br />
-   (ignore favorite/gym marked)<br />
-   (Optional: Enabled by default, can be Disabled via UserSettings.)<br />
-   (Optional: UseTransferPokemonKeepAboveCP - Keeps all Pokemon with CP > TransferPokemonKeepAboveCP, Enabled by default, can be Disabled vis UserSettings)
-   (Optional: UseTransferPokemonKeepAboveIV - Keeps all Pokemon with IV > TransferPokemonKeepAboveIVPercentage, Enabled by default, can be Disabled vis UserSettings)
-   (Optional: PrioritizeIVOverCP - Determines the sorting sequence - CP or IV, Enabled by default, can be Disabled via UserSettings.)<br />
-   (Optional: TransferPokemonKeepDuplicateAmount - The amount of X best Pokemon he should keep, 2 by default, configurable via UserSettings)<br />
-   (Optional: PokemonsNotToTransfer List. Enabled by default, can be Disabled via UserSettings, configurable Names via File in Config Folder)
-   (Optional: NotTransferPokemonsThatCanEvolve - Will keep ALL Pokemons which can be Evolve not matter if they on PokemonsToEvolve List or not, Disabled by default, can be Enabled via UserSettings)
- - [Throws away unneeded items]<br />
-   (configurable via Settings.cs)
- - [Use Lucky Eggs]<br />
-   (Disbaled by default, can be Enabled via UserSettings)
- - [Use Incense]<br />
-   (Disbaled by default, can be Enabled via UserSettings)
- - [Use best Pokeball & Berry]<br />
-   (depending on Pokemon CP and IV)
- - [Creates Excel CSV File on Startup with your current Pokemon]<br />
-   (including Number, Name, CP,IV Perfection in % and many more) (can be found in the Export Folder)
- - [Softban bypass]
- - [Log File System]<br />
-   (all activity will be tracked in a Log File)
- - [Statistic in the Header] ![alt tag](https://github.com/Spegeli/Pokemon-Go-Rocket-API/blob/master/StatisticScreenshot.png)
- - [Very color and useful Logging]<br />
-   (so you every time up2date what currently happened)
- - and many more ;-)
+In order for the bot to function. You will need to supply a encrypt.dll file. Due to to legal reasons, We will not supply this file. <br/>
+The dll needs to be placed within the folder:<br/>
+PokemoGoBot-GottaCatchEmAll-master\PokemonGo.RocketAPI.Console\bin\Debug<br/>
 <br/>
-
-<h2><a name="screenshots">Screenshots</a></h2>
-![alt text][1.3]
-<br/>
+The file is not hard to find and any questions about this or other common items can be found within our [Discord community](https://discord.gg/KzJUjDE) in the channel [#readme](https://discord.gg/U2bz3JT)<br/>
+<br />
 
 <h2><a name="getting-started">Getting Started</a></h2>
 Make sure you check out our [Wiki](https://github.com/Spegeli/PokemoGoBot-GottaCatchEmAll/wiki) to get started.
 <br/>
 
-<h2><a name="credits">Credits</a></h2>
-A big thank you goes to Feroxs' hard work on the API & Console. Without him, this would not have been possible. <3
-<br/>
-Thanks to everyone who volunteered by contributing via Pull Requests!
-
 <h2><a name="donating">Donating</a></h2>
-<a name="paypal">Feel free to buy us all a beer, by using PayPal:</a><br/>
-[![](http://i.epvpimg.com/vI2ch.gif)](https://www.paypal.me/MoneyForSpegeli) OR 
-[![](http://i.epvpimg.com/vI2ch.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YE3KBU2RGZYPY) <br/>
+<a name="Donating">All infos about how you can do a donate can you find in the [Wiki](https://github.com/Spegeli/PokemoGoBot-GottaCatchEmAll/wiki/Donations#donating)</a><br />
+<br />
 
-<h6><em>[ All PayPal donations are distributed amongst our most active collaborators. ]</em></h6><br/>
-<a name="btc">Donate Bitcoins to FeroxRev (the API library developer): *1ExYxfBb5cERHyAfqtFscJW7vm2vWBbL3e*</a><br/>
+<h2><a name="features">Features</a></h2>
+ - [PTC Login / Google]
+ - [Get Map Objects and Inventory]
+ - [Humanlike Walking]<br />
+ - [Configurable Custom Pathing]<br />
+ - [Farm Pokestops]<br />
+ - [Catch Pokemon (Lured & Incense supported)]<br />
+ - [Evolve Pokemon]<br />
+ - [Transfer Pokemon]<br />
+ - [Throws away unneeded items]<br />
+ - [Use Lucky Eggs]<br />
+ - [Use Incense]<br />
+ - [Egg Hatching Automatically]
+ - [Use best Pokeball & Berry]<br />
+ - [Creates Excel CSV File on Startup with your current Pokemon]<br />
+ - [Softban bypass]<br />
+ - [Log File System]<br />
+ - [Statistic in the Header]
+   ![STATISTICSCREENSHOT][1.2]<br />
+ - [Very color and useful Logging]<br />
+ - and many more ;-)
+<br/>
 
+<h2><a name="screenshots">Screenshots</a></h2>
+![SCREENSHOT](https://cloud.githubusercontent.com/assets/20632191/17541319/4abcef36-5e8c-11e6-8bce-bd0d593a01c9.png)<br />
+<br />
+![SCREENSHOT][1.1]<br />
+<br/>
+
+<h2><a name="credits">Credits</a></h2>
+A big thank you goes to Feroxs' hard work on the API & Console. Without him, this would not have been possible. <3<br />
+And a big thank your to LineWalker & AeonLucid for the POGOProtos<br />
+<br/>
+Thanks to everyone who volunteered by contributing via Pull Requests!<br />
+<br />
+
+<h2><a name="credits">Legal</a></h2>
+This Website and Project is in no way affiliated with, authorized, maintained, sponsored or endorsed by Niantic, The Pokémon Company, Nintendo or any of its affiliates or subsidiaries. This is an independent and unofficial API for educational use ONLY. Using the Project might be against the TOS<br />
+<br/>
+Inquiries: EMAIL COMING SOON<br />
 <hr/>
